@@ -1,0 +1,93 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Project.SiteMaster" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - Student System</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet" />
+
+    <style>
+        .navbar-inverse {
+            background-color: #222;
+            border-color: #080808;
+            border-radius: 0;
+            margin-bottom: 0;
+        }
+
+        .navbar-brand {
+            color: #fff !important;
+            font-size: 20px;
+        }
+
+        .nav-link {
+            color: #9d9d9d !important;
+            padding: 15px 10px;
+            display: inline-block;
+        }
+
+            .nav-link:hover {
+                color: #fff !important;
+                text-decoration: none;
+            }
+
+        .main-content {
+            padding: 40px 0;
+            min-height: 700px;
+        }
+
+        footer {
+            padding: 20px 0;
+            border-top: 1px solid #eee;
+            margin-top: 40px;
+            color: grey;
+            font-size: 10pt;
+        }
+    </style>
+</head>
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+            </Scripts>
+        </asp:ScriptManager>
+
+        <nav class="navbar navbar-inverse">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" runat="server" href="~/Dashboard.aspx">Student Enrollment System</a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <asp:ContentPlaceHolder ID="NavContent" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a runat="server" href="~/Logout.aspx">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container main-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+
+            <footer>
+                <p>&copy; <%: DateTime.Now.Year %> Student Enrollment System</p>
+            </footer>
+        </div>
+    </form>
+</body>
+</html>
