@@ -144,15 +144,37 @@ The database setup script is provided in:
 
 7\. Build and run the project using IIS Express.
 
+8. Open `/Login.aspx` in the browser.
 
 
 Example connection string:
 
 
+`Data Source=.\SQLEXPRESS01;Initial Catalog=EnrollmentDB;Integrated Security=True;TrustServerCertificate=True`
 
-`Data Source=.\\SQLEXPRESS01;Initial Catalog=EnrollmentDB;Integrated Security=True;TrustServerCertificate=True`
 
+### Demo Login
 
+- Student ID: `DEMO001`
+- Password: `Demo@123`
+
+> These credentials are provided for demonstration purposes only.
+
+## Screenshots
+
+### Timetable Matching
+![Timetable Matching](screenshots/01-timetable-matching.png)
+
+### Student Enquiry
+![Enquiry Submitted](screenshots/02-enquiry-submitted.png)
+
+### Enquiry History
+![Enquiry History](screenshots/03-enquiry-history.png)
+
+### Student Evaluation of Teaching
+![Evaluation Form](screenshots/04-evaluation-form.png)
+
+![Evaluation Submitted](screenshots/05-evaluation-success.png)
 
 \## Project Type
 
